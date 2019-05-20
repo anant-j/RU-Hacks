@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="../static/style.css"></link> -->
+<title>Homeless Hack</title>
+</head>
+  <body>
+    <div id="container">
+    {% if number %}
+    <h3 style="color:red;">{{number}}</h3>
+    {%endif%}
+  <h3>Homeless Hack for Homeless People</h3>
+  
+  <form action="/" method="POST">
+  {% csrf_token %}
+  {% if sid %}
+  <h1>{{sid}}</h1>
+  {%endif%}
+  <input class="inputs" name="phone" type="text" id="ph" placeholder="Enter Phone Number"></input><br>
+  <br>
+  <button class="button">SUBMIT</button>
+  </form>
+  </div>
+
+
+</html>
